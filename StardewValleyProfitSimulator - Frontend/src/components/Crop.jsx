@@ -54,6 +54,7 @@ const Crop = () => {
               Regrowth Time:{' '}
               {crop.regrowthTime === 0 ? 'N/A' : `${crop.regrowthTime} days`}
             </Card.Text>
+            <Card.Text>Crops per harvest: {crop.cropsPerHarvest}</Card.Text>
           </div>
         </Card.Body>
       </Card>
