@@ -25,10 +25,10 @@ const Home = () => {
     <Container className="card-container">
       <Row xs={'1'} sm={'2'} md={'3'} lg={'4'} xl={'5'} className="g-3">
         {crops.map(
-          ({ id, name, ImageUrl, seedCost, seedSellPrice, seasons }) => (
+          ({ id, name, ImageUrl, seedCost, cropSellPrice, seasons }) => (
             <Col key={id}>
               <Link
-                to={'/crop'}
+                to={`/crop/${id}`}
                 style={{ textDecoration: 'none', color: 'inherit' }}
               >
                 <Card className="crop-card h-100">
@@ -45,7 +45,7 @@ const Home = () => {
                     <Card.Subtitle className="crop-card-subtitle">
                       {seasons.map(({ name }) => name).join(', ')}
                     </Card.Subtitle>
-                    <Card.Text>Base Sell-Price: {seedSellPrice}g</Card.Text>
+                    <Card.Text>Base Sell-Price: {cropSellPrice}g</Card.Text>
                     <Card.Text>Cost: {seedCost}g</Card.Text>
                   </Card.Body>
                 </Card>
