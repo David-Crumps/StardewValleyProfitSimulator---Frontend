@@ -1,12 +1,16 @@
 .dark-theme {
   --root_background: #1f1f1f;
+  --root_background-image: url('./assets/StardewValleyNight.jpg');
 }
 .light-theme {
   --root_background: white;
+  --root_background-image: url('./assets/StardewValleyDay.png');
 }
 
 body {
   height: 100%;
   margin: 0;
   background-color: var(--root_background);
+  background-image: var(--root_background-image);
+  background-size: cover;
 }
