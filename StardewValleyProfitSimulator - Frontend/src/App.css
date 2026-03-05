@@ -128,7 +128,7 @@ h1 {
   color: black;
 }
 
-/* <------------------------ CARDS ------------------------> */
+/* <------------------------------------------------ CARDS ------------------------------------------------> */
 .crop-card {
   box-shadow: 5px 5px 5px var(--shadow);
   padding-top: 5px;
@@ -169,16 +169,15 @@ h1 {
 }
 
 .single-crop-img-card {
-  width: 100%;
+  width: 40%;
   height: auto;
-  object-fit: cover;
-  margin-bottom: 10px;
-  padding: 10px;
+  object-fit: contain;
 }
 
 .single-crop-card {
   background-color: var(--card-bg-clr);
   box-shadow: 5px 5px 5px var(--shadow);
+  width: 33vw;
 }
 
 .centre-wrapper {
@@ -188,4 +187,6 @@ h1 {
   min-height: 100vh;
 }
 
-/* <------------------------ PAGE ------------------------> */
+.single-crop-info-card {
+  padding-left: 20%;
+}
