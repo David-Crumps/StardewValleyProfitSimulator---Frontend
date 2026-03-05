@@ -1,17 +1,10 @@
 import Card from 'react-bootstrap/Card';
-import cropPic from '../assets/Blue_Jazz.png';
 
 const Crop = () => {
   return (
     <div className="centre-wrapper">
       <Card className="single-crop-card">
         <Card.Body>
-          <Card.Img
-            alt="Picture of Crop"
-            variant="bottom"
-            src={cropPic}
-            className="single-crop-img-card"
-          />
           <Card.Title as={'h2'} className="crop-card-title">
             Blue Jazz
           </Card.Title>
