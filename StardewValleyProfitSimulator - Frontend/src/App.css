@@ -11,7 +11,7 @@
   --cart_body_color: white;
   --quantity-clr: rgb(0, 0, 0);
   --button-clr: black;
-  --card-bg-clr: #d1a552;
+  --card-bg-clr: #cdaa7d;
   --card-frame: url('./assets/light_wood_frame.png');
   --btn-bg: var(--navbar_background);
   --btn-clr: black;
@@ -33,7 +33,7 @@
   --cart_body_color: rgb(36, 35, 35);
   --quantity-clr: rgb(255, 255, 255);
   --button-clr: white;
-  --card-bg-clr: #3f3117;
+  --card-bg-clr: #4d3737;
   --card-frame: url('./assets/dark_wood_frame.png');
   --btn-bg: var(--navbar_background);
   --btn-clr: white;
@@ -110,7 +110,17 @@ h1 {
 
 .navbar-theme {
   background-color: var(--navbar_background);
-  border-bottom: 1px solid black;
+}
+.navbar-theme::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: -8%;
+  border-bottom: 30px solid transparent;
+  border-image: var(--card-frame) 500 round;
+  pointer-events: none;
 }
 
 .navbar a,
@@ -195,6 +205,18 @@ h1 {
   background-color: var(--card-bg-clr);
   box-shadow: 5px 5px 5px var(--shadow);
   width: 33vw;
+}
+
+.single-crop-card::before {
+  content: '';
+  position: absolute;
+  top: -2%;
+  left: -2%;
+  right: -2%;
+  bottom: -2%;
+  border: 30px solid transparent;
+  border-image: var(--card-frame) 500 round;
+  pointer-events: none;
 }
 
 .centre-wrapper {
