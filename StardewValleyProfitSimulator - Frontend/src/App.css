@@ -211,8 +211,8 @@ h1 {
   content: '';
   position: absolute;
   top: -2%;
-  left: -2%;
-  right: -2%;
+  left: -1%;
+  right: -1%;
   bottom: -2%;
   border: 30px solid transparent;
   border-image: var(--card-frame) 500 round;
