@@ -10,6 +10,7 @@ const Crop = () => {
   useEffect(() => {
     const fetchCrop = async () => {
       try {
+        if (!id) return;
         const response = await axios.get(
           `http://localhost:8080/api/crops/${id}`,
         );
