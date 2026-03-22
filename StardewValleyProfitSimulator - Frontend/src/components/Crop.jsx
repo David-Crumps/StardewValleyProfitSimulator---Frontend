@@ -6,6 +6,7 @@ import axios from 'axios';
 const Crop = () => {
   const { id } = useParams();
   const [crop, setCrop] = useState(null);
+  const [error, setError] = useState(null);
 
   useEffect(() => {
     const fetchCrop = async () => {
@@ -16,16 +17,28 @@ const Crop = () => {
         );
         setCrop(response.data);
       } catch (error) {
+        const errorData = error.response.data;
+        if (error.response) {
+          setError(`Error: ${errorData.messages.join(', ')}`);
+        }
         console.error('Error fetching crop: ', error);
       }
     };
     fetchCrop();
   }, [id]);
 
+  if (error) {
+    return (
+      <h2 className="text-center" style={{ padding: '10rem' }}>
+        {error}
+      </h2>
+    );
+  }
+
   if (!crop) {
     return (
       <h2 className="text-center" style={{ padding: '10rem' }}>
-        Loading...
+        Loading crop...
       </h2>
     );
   }
