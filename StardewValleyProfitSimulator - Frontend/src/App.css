@@ -13,6 +13,7 @@
   --button-clr: black;
   --card-bg-clr: #cdaa7d;
   --card-frame: url('./assets/light_wood_frame.png');
+  --card-background: url('./assets/light_wood_background.png');
   --btn-bg: var(--navbar_background);
   --btn-clr: black;
   --category-hvr: rgb(200, 200, 200);
@@ -35,6 +36,7 @@
   --button-clr: white;
   --card-bg-clr: #4d3737;
   --card-frame: url('./assets/dark_wood_frame.png');
+  --card-background: url('./assets/dark_wood_background.png');
   --btn-bg: var(--navbar_background);
   --btn-clr: white;
   --category-hvr: rgb(115, 115, 115);
@@ -146,6 +148,9 @@ h1 {
   padding-top: 5px;
   padding-bottom: 0;
   background-color: var(--card-bg-clr);
+  background-image: var(--card-background);
+  background-size: cover;
+
   border: none;
   position: relative;
 }
@@ -203,6 +208,8 @@ h1 {
 
 .single-crop-card {
   background-color: var(--card-bg-clr);
+  background-image: var(--card-background);
+  background-size: cover;
   box-shadow: 5px 5px 5px var(--shadow);
   width: 33vw;
 }
@@ -228,4 +235,29 @@ h1 {
 
 .single-crop-info-card {
   padding-left: 20%;
+}
+
+/* <------------------------------------------------ DROPDOWNS ------------------------------------------------> */
+
+.dropdown-season {
+  margin-top: 200px;
+  width: 20vw;
+}
+
+.dropdown-season-menu {
+  text-align: right;
+  border-radius: 20px;
+  border-color: #007bff;
+}
+.dropdown-season-menu :hover {
+  background-color: #007bff;
+}
+
+.dropdown-season-toggle {
+  width: 20vw;
+}
+
+.dropdown-crop {
+  margin-top: 200px;
+  width: 20vw;
 }
