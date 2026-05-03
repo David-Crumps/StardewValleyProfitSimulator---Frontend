@@ -17,6 +17,33 @@ const AddCrop = () => {
   const [selectedCrop, setSelectedCrop] = useState(null);
 
   useEffect(() => {
+    const getSeasons = async () => {
+      try {
+        const response = await axios.get(
+          `http://localhost:8080/api/seasons/names`,
+        );
+        setSeasonsList(response.data);
+      } catch (error) {
+        if (error.response) {
+          console.error('Error');
+        }
+      }
+    };
+    getSeasons();
+  }, []);
+
+  const renderSeasonList = () => {
+    if (!seasonsList || !seasonsList.length) {
+      return <DropdownItem disabled> No Seasons available</DropdownItem>;
+    }
+    return seasonsList.map(({ id, name }) => (
+      <DropdownItem key={id} eventKey={JSON.stringify({ id, name })}>
+        {name}
+      </DropdownItem>
+    ));
+  };
+
+  useEffect(() => {
     const getCropsBySeason = async () => {
       try {
         if (!selectedSeasonId) return;
@@ -33,22 +60,6 @@ const AddCrop = () => {
     getCropsBySeason();
   }, [selectedSeasonId]);
 
-  useEffect(() => {
-    const getSeasons = async () => {
-      try {
-        const response = await axios.get(
-          `http://localhost:8080/api/seasons/names`,
-        );
-        setSeasonsList(response.data);
-      } catch (error) {
-        if (error.response) {
-          console.error('Error');
-        }
-      }
-    };
-    getSeasons();
-  }, []);
-
   const renderCropList = () => {
     if (!cropsBySeason || !cropsBySeason.crops.length) {
       return <DropdownItem disabled> No crops available</DropdownItem>;
@@ -56,17 +67,6 @@ const AddCrop = () => {
     return cropsBySeason.crops.map((crop) => (
       <DropdownItem key={crop} eventKey={crop}>
         {crop}
-      </DropdownItem>
-    ));
-  };
-
-  const renderSeasonList = () => {
-    if (!seasonsList || !seasonsList.length) {
-      return <DropdownItem disabled> No Seasons available</DropdownItem>;
-    }
-    return seasonsList.map(({ id, name }) => (
-      <DropdownItem key={id} eventKey={JSON.stringify({ id, name })}>
-        {name}
       </DropdownItem>
     ));
   };
